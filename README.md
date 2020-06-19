@@ -20,7 +20,7 @@ It consists of:
 The framework based on data source configuration file and etl configuration file creates data warehouse on spark and sends changes into sql databases.
 The following diagram presents general etl concept.
 
-![Archiecture](.\docs\imgs\architecture.png)
+![Archiecture](./docs/imgs/architecture.png)
 
 
 
@@ -43,7 +43,7 @@ The following diagram presents general etl concept.
 - Install **etl_sparkdw_tools-*.*.*_ds-py3.7.egg** library
 
 See 
-[Configurations]: ./docs/Configurations.md
+[Configurations]: (./docs/Configurations.md)
 
 ### Running
 
@@ -96,5 +96,5 @@ etl_proc.run_dimensions()
 
 ## Examples
 
-[Demo]: ./docs/DemoPeople.md
+[Demo]: (./docs/DemoPeople.md)
 

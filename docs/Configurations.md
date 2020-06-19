@@ -42,7 +42,7 @@ CREATE OR REPLACE VIEW vwdimpeople AS SELECT * FROM stage_people
 | IsSparkDataBrick  | Decides that engine is run on Databricks (Default false) | True or False                                          |
 | DATABASE_HOSTNAME | SQL DW Host Address                                      | localhost (in production env. in should be in secrets) |
 | DATABASE_PORT     | SQL DW Server Port (default 1433)                        | 1433                                                   |
-| DATABASE_NAME     | SQL DW Database Name                                     | AdiaDW                                                 |
+| DATABASE_NAME     | SQL DW Database Name                                     | DW                                                     |
 | DATABASE_USERNAME | SQL DW Server User Name                                  | (in production env. in should be in secrets)           |
 | DATABASE_PASSWORD | SQL DW Server User Name                                  | (in production env. in should be in secrets)           |
 
