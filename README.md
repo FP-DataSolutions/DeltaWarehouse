@@ -4,6 +4,14 @@ Spark ETL Framework based on Delta
 Spark ETL framework is a tool to automate ETL processes.
 Current version requires Spark cluster on Databricks.
 
+## License
+
+Apache License 2.0, see  [LICENSE](LICENSE.md) 
+
+## Contributing
+We welcome contributions to Delta Warehouse
+If you would like to join Delta Warehouse Community, please send email to [tomasz.k.krawczyk@gmail.com](tomasz.k.krawczyk@gmail.com) 
+
 ## Architecture
 
 Spark ETL framework supports the building of a data warehouse on Spark with SCD Type2.
