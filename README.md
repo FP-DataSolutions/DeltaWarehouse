@@ -24,6 +24,23 @@ The following diagram presents general etl concept.
 
 
 
+## How it works
+
+1. In the first step the new data base on spark will be created (if not exists)
+2. Next the all data sources will be registered (as an external tables with stage sufix)
+3. In the next step the views for dimensions will be created (or reloaded)
+4. Next the data for the dimentions tables will be loaded  (prefix Dim)
+   1. If the dimensions table doesn't exist will be automatically created based on the sql view
+   2. Into table (except columns from the sql view) new columns will be added (row_sha2,row_version, row_startdate,row_endate etc.)
+   3. New table with elt history will be created (sufix **_etl_hist**)
+   4. New rows will be added into history table (row_elt_proc_oper ='INSERT')
+   5. Changed rows will be added into into history table (SCD Type 2)
+      1. new rows   row_iscurrent = true -  row_elt_proc_oper ='INSERT'
+      2. updated rows (row_iscurrent = false) -  row_elt_proc_oper ='UPDATE'
+   6. Changes saved in history table will be merged with dimension table
+   7. Changes saved in history table will be saved in SQL DW
+5. In the next step the facts tables will loaded (process similar to dims tables)
+
 ## How to run
 
 ### Installation
@@ -43,7 +60,8 @@ The following diagram presents general etl concept.
 - Install **etl_sparkdw_tools-*.*.*_ds-py3.7.egg** library
 
 See 
-[Configurations]: (./docs/Configurations.md)
+
+ [Configurations](.\Configurations.md) 
 
 ### Running
 
@@ -96,5 +114,4 @@ etl_proc.run_dimensions()
 
 ## Examples
 
-[Demo]: (./docs/DemoPeople.md)
-
+ [Demo - Dim People](.\DemoPeople.md) 
