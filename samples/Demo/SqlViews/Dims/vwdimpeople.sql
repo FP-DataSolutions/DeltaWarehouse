@@ -1,0 +1,1 @@
+CREATE OR REPLACE VIEW vwdimpeople AS SELECT * FROM stage_people
