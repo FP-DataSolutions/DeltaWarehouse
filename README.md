@@ -6,7 +6,7 @@ Current version requires Spark cluster on Databricks.
 
 ## License
 
-Apache License 2.0, see  [LICENSE](LICENSE.md) 
+Apache License 2.0, see  [LICENSE](LICENSE) 
 
 ## Contributing
 We welcome contributions to Delta Warehouse
