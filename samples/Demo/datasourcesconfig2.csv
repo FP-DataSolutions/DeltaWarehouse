@@ -1,0 +1,2 @@
+DataSourcePath;DataSourceFormat;DataSourceOptions;TableName
+people2;CSV;"header 'true' , sep ';'";people

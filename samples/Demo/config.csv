@@ -1,0 +1,2 @@
+TableName;TableDataSource;TableUniqueKeys;TableRowKeyName;RowHashExcludedColumns
+DimPeople;vwdimpeople;Id;peopleKey;name,age;
