@@ -61,7 +61,7 @@ The following diagram presents general etl concept.
 
 See 
 
- [Configurations](.\Configurations.md) 
+ [Configurations](.\docs\Configurations.md) 
 
 ### Running
 
@@ -114,4 +114,4 @@ etl_proc.run_dimensions()
 
 ## Examples
 
- [Demo - Dim People](.\DemoPeople.md) 
+ [Demo - Dim People](.\docs\DemoPeople.md) 
