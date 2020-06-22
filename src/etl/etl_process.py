@@ -7,6 +7,7 @@ from ds.data_source_mapping_manager import DataSourceMappingManager
 from etl.etl_table_configuration import EtlTableConfiguration
 from time import time 
 from utils.logger import Logger
+from utils.config import Config
 from sinks.msql_connector import MsqlConnector
 
 class ETLProcess:
@@ -65,19 +66,21 @@ class ETLProcess:
         for etl_table in self.__etl_tables:
             table_name = etl_table.get_sink_table_name().lower()
             if table_name.startswith("dim"):
-                etl_table.run_etl_process()
-                changes = etl_table.get_changes()
-                self.__dwsink.insert_with_overwrite(changes,"stage."+etl_table.get_sink_table_name())
+                self.__process_table(etl_table)
             else:
-                 self.__logger.trace('Skipping {} - not a dimension...'.format(table_name))
+                self.__logger.trace('Skipping {} - not a dimension...'.format(table_name))
 
     def run_facts(self):
         self.__logger.trace('Loading  facts ...')
         for etl_table in self.__etl_tables:
             table_name = etl_table.get_sink_table_name().lower()
             if table_name.startswith("fact"):
-                etl_table.run_etl_process()
-                changes = etl_table.get_changes()
-                self.__dwsink.insert_with_overwrite(changes,"stage."+etl_table.get_sink_table_name())
+                self.__process_table(etl_table)
             else:
                  self.__logger.trace('Skipping {} - not a fact...'.format(table_name))
+
+    def __process_table(self,table:DWTable):
+        table.run_etl_process()
+        if Config.LoadIntoSink:
+             changes = table.get_changes()
+             self.__dwsink.insert_with_overwrite(changes,"stage."+table.get_sink_table_name())

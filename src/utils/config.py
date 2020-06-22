@@ -1,6 +1,7 @@
 class Config:
     """description of class"""
-    IsSparkDataBrick=False
+    IsSparkDataBrick = False
+    LoadIntoSink = True
     DATABASE_HOSTNAME = 'localhost'
     DATABASE_PORT = 1433
     DATABASE_NAME = 'SparkDW'
