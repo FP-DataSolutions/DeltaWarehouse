@@ -18,7 +18,6 @@
 **/x86/
 **/x64/
 **/build/
-**/[Bb]in/
 **/[Oo]bj/
 **/aspnet_client
 
@@ -152,9 +151,7 @@ ipch/
 **/.DS_Store
 
 # My Settings
-**/bin/
 **/obj/
-**/**/bin/
 **/**/obj/
 **/**/env/
 **/**/**/env/
